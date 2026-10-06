@@ -1,0 +1,347 @@
+/* Shared page styles for Analyze + Lab Test
+   Location: src/styles/analyze.css
+   Import in a page:  import "../styles/analyze.css"; */
+
+.analyze-page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 28px 32px 40px;
+    color: #23458b;
+    font-family: inherit;
+}
+
+/* ---------- Header ---------- */
+.analyze-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.analyze-header h1 {
+    margin: 2px 0 4px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #23458b;
+}
+
+.analyze-kicker {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #728ba3;
+}
+
+.analyze-subtitle {
+    margin: 0;
+    font-size: 14px;
+    color: #637e90;
+}
+
+/* ---------- Layout ---------- */
+.analyze-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 20px;
+    align-items: start;
+}
+
+.analyze-panel {
+    background: white;
+    border: 1px solid #b7d2dc;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(35, 69, 139, 0.06);
+    min-width: 0;
+}
+
+.analyze-panel h2 {
+    margin: 0 0 14px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #23458b;
+}
+
+/* ---------- Buttons (shared) ---------- */
+.analyze-page button {
+    font: inherit;
+    font-size: 14px;
+    padding: 7px 14px;
+    border: 1px solid #bfd8e1;
+    border-radius: 8px;
+    background: #f7fcff;
+    color: #23458b;
+    cursor: pointer;
+    transition:
+        background 0.15s,
+        border-color 0.15s;
+}
+
+.analyze-page button:hover:not(:disabled) {
+    background: #d9f0f5;
+    border-color: #9cc4d2;
+}
+
+.analyze-page button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.analyze-page button.primary {
+    background: #23458b;
+    border-color: #23458b;
+    color: white;
+    font-weight: 600;
+}
+
+.analyze-page button.primary:hover:not(:disabled) {
+    background: #1b3670;
+}
+
+/* ---------- Toolbar: tabs, toggle, actions ---------- */
+.analyze-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.analyze-header .analyze-actions {
+    margin-bottom: 0;
+}
+
+.analyze-tabs,
+.analyze-toggle {
+    display: inline-flex;
+    padding: 3px;
+    gap: 2px;
+    background: #f7fcff;
+    border: 1px solid #bfd8e1;
+    border-radius: 10px;
+}
+
+.analyze-toggle {
+    margin-right: auto;
+}
+
+.analyze-tabs button,
+.analyze-toggle button {
+    border: none;
+    background: transparent;
+    border-radius: 7px;
+    color: #637e90;
+}
+
+.analyze-page .analyze-tabs button.chosen,
+.analyze-page .analyze-toggle button.chosen {
+    background: #23458b;
+    color: white;
+    font-weight: 600;
+}
+
+/* ---------- Chart & table ---------- */
+.analyze-chart {
+    width: 100%;
+    min-height: 360px;
+}
+
+.analyze-table-scroll {
+    overflow: auto;
+    max-height: 480px;
+    border: 1px solid #dbeaf0;
+    border-radius: 10px;
+}
+
+.analyze-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.analyze-table th {
+    position: sticky;
+    top: 0;
+    background: #f7fcff;
+    color: #637e90;
+    font-weight: 600;
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid #bfd8e1;
+}
+
+.analyze-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #eef5f8;
+    color: #2c3e50;
+}
+
+.analyze-table tbody tr:hover {
+    background: #f7fcff;
+}
+
+.analyze-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #637e90;
+}
+
+.analyze-empty {
+    display: grid;
+    place-items: center;
+    min-height: 300px;
+    margin: 0;
+    color: #728ba3;
+    background: #f7fcff;
+    border: 1px dashed #bfd8e1;
+    border-radius: 10px;
+}
+
+/* ---------- Filters sidebar ---------- */
+.analyze-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.analyze-filters h2 {
+    margin-bottom: 0;
+}
+
+.analyze-quick {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+}
+
+.analyze-quick button {
+    font-size: 13px;
+    padding: 6px 8px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #637e90;
+}
+
+.field input,
+.field select {
+    font: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 8px 10px;
+    border: 1px solid #bfd8e1;
+    border-radius: 8px;
+    background: #f7fcff;
+    color: #23458b;
+}
+
+.field input:focus,
+.field select:focus {
+    outline: none;
+    border-color: #23458b;
+    box-shadow: 0 0 0 3px rgba(35, 69, 139, 0.12);
+}
+
+.analyze-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #23458b;
+    cursor: pointer;
+}
+
+.analyze-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.analyze-page .analyze-apply {
+    width: 100%;
+    padding: 10px;
+}
+
+.analyze-note {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #728ba3;
+}
+
+.analyze-error {
+    margin: 0;
+    padding: 10px 12px;
+    font-size: 13px;
+    color: #a3302b;
+    background: #fdecea;
+    border: 1px solid #f3c2bf;
+    border-radius: 8px;
+}
+
+/* ---------- Summary cards ---------- */
+.analyze-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 12px;
+}
+
+.analyze-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 16px;
+    background: #f7fcff;
+    border: 1px solid #bfd8e1;
+    border-radius: 12px;
+}
+
+.analyze-stat span {
+    font-size: 12px;
+    font-weight: 600;
+    color: #637e90;
+}
+
+.analyze-stat strong {
+    font-size: 22px;
+    font-weight: 700;
+    color: #23458b;
+}
+
+.analyze-stat small {
+    font-size: 12px;
+    color: #728ba3;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+    .analyze-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .analyze-page {
+        padding: 20px 16px 32px;
+    }
+
+    .analyze-toggle {
+        margin-right: 0;
+    }
+}
